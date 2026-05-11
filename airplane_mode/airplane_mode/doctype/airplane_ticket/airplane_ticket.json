@@ -8,12 +8,12 @@
  "field_order": [
   "section_break_axjg",
   "passenger",
-  "source_airport",
+  "status",
   "source_airport_code",
   "amended_from",
   "column_break_nvpy",
   "flight",
-  "destination_airport",
+  "seat",
   "destination_airport_code",
   "add_ons_section",
   "add_ons",
@@ -25,8 +25,7 @@
   "depature_date",
   "departure_time",
   "column_break_tjjb",
-  "duration_n_of_flight",
-  "status"
+  "duration_of_flight"
  ],
  "fields": [
   {
@@ -49,35 +48,22 @@
    "in_list_view": 1,
    "label": "Passenger",
    "options": "Flight Passenger",
-   "reqd": 1
-  },
-  {
-   "fieldname": "source_airport",
-   "fieldtype": "Link",
-   "label": "Source Airport",
-   "options": "Airport",
-   "reqd": 1
+   "reqd": 1,
+   "search_index": 1
   },
   {
    "fieldname": "column_break_nvpy",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "destination_airport",
-   "fieldtype": "Link",
-   "label": "Destination Airport",
-   "options": "Airport",
-   "reqd": 1
-  },
-  {
-   "fetch_from": "source_airport.code",
+   "fetch_from": "flight.source_airport_code",
    "fieldname": "source_airport_code",
    "fieldtype": "Data",
    "label": "Source Airport Code",
    "read_only": 1
   },
   {
-   "fetch_from": "destination_airport.code",
+   "fetch_from": "flight.destination_airport_code",
    "fieldname": "destination_airport_code",
    "fieldtype": "Data",
    "label": "Destination Airport Code",
@@ -87,16 +73,12 @@
    "fieldname": "flight",
    "fieldtype": "Link",
    "label": "Flight",
-   "options": "Airplane",
-   "reqd": 1
+   "options": "Airplane Flight",
+   "reqd": 1,
+   "search_index": 1
   },
   {
-   "fieldname": "duration_n_of_flight",
-   "fieldtype": "Duration",
-   "label": "Duration n of Flight",
-   "reqd": 1
-  },
-  {
+   "fetch_from": "flight.date_of_departure",
    "fieldname": "depature_date",
    "fieldtype": "Date",
    "in_filter": 1,
@@ -106,6 +88,7 @@
    "reqd": 1
   },
   {
+   "fetch_from": "flight.time_of_departure",
    "fieldname": "departure_time",
    "fieldtype": "Time",
    "label": "Departure Time",
@@ -157,13 +140,26 @@
   {
    "fieldname": "column_break_isnj",
    "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "flight.duration",
+   "fieldname": "duration_of_flight",
+   "fieldtype": "Duration",
+   "label": "Duration of Flight",
+   "reqd": 1
+  },
+  {
+   "fieldname": "seat",
+   "fieldtype": "Data",
+   "label": "Seat",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-05-07 18:10:34.421849",
+ "modified": "2026-05-11 17:47:47.225989",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Ticket",
