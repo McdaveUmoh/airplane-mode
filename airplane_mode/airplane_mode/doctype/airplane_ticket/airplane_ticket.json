@@ -15,6 +15,12 @@
   "flight",
   "destination_airport",
   "destination_airport_code",
+  "add_ons_section",
+  "add_ons",
+  "section_break_fyix",
+  "flight_price",
+  "column_break_isnj",
+  "total_amount",
   "departure_details_section",
   "depature_date",
   "departure_time",
@@ -121,13 +127,43 @@
    "label": "Status",
    "options": "Booked\nChecked-in\nBoarded",
    "reqd": 1
+  },
+  {
+   "fieldname": "add_ons_section",
+   "fieldtype": "Section Break",
+   "label": "Add ons"
+  },
+  {
+   "fieldname": "add_ons",
+   "fieldtype": "Table",
+   "label": "add_ons",
+   "options": "Airplane Ticket Add-on Item"
+  },
+  {
+   "fieldname": "flight_price",
+   "fieldtype": "Currency",
+   "label": "Flight Price"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_fyix",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_isnj",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-04-20 17:48:17.096976",
+ "modified": "2026-05-07 18:10:34.421849",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Ticket",
