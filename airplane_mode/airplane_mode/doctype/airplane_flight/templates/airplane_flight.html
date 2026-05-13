@@ -1,0 +1,14 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<h1>{{ title |e }}</h1>
+ <h1>{{ title |e }}</h1>
+    <h2> {{doc.source_airport_code}}  -|-> {{doc.destination_airport_code}}</h2>
+    <h3> {{doc.date_of_departure}}, {{doc.time_of_departure}} | {{doc.duration}}</h3>
+    
+    <br/> <br/>
+     <a class="btn btn-info" href="/book-a-ride/new/?vehicle={{doc.name}}"> View Flight</a>
+
+{% endblock %}
+
+<!-- this is a sample default web page template -->

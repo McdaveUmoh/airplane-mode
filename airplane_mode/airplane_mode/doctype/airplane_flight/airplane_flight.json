@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_guest_to_view": 1,
  "allow_rename": 1,
  "autoname": "{airplane}.-.MM.-.YYYY.-.#####",
  "creation": "2026-05-11 16:46:25.004441",
@@ -11,6 +12,8 @@
   "airplane",
   "column_break_zbci",
   "status",
+  "route",
+  "is_published",
   "airport_details_section",
   "source_airport",
   "source_airport_code",
@@ -123,10 +126,23 @@
   {
    "fieldname": "column_break_sais",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_published",
+   "fieldtype": "Check",
+   "label": "Is Published"
   }
  ],
  "grid_page_length": 50,
+ "has_web_view": 1,
  "index_web_pages_for_search": 1,
+ "is_published_field": "is_published",
  "is_submittable": 1,
  "links": [
   {
@@ -134,7 +150,7 @@
    "link_fieldname": "flight"
   }
  ],
- "modified": "2026-05-11 17:45:06.756344",
+ "modified": "2026-05-13 18:39:12.165558",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Flight",
@@ -155,6 +171,7 @@
    "write": 1
   }
  ],
+ "route": "flights",
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
  "sort_field": "creation",
